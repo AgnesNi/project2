@@ -22,9 +22,6 @@ def myFattree():
                          port=6633)
 
     info(' *** Add switches\n')
-    ''''
-    一共有四组交换机，一共20个，每组的排序按照从下到上从左到右
-    ''''
     s1 = net.addSwitch('s1', cls=OVSKernelSwitch)
     s11 = net.addSwitch('s11', cls=OVSKernelSwitch)
     s12 = net.addSwitch('s12', cls=OVSKernelSwitch)
@@ -47,9 +44,6 @@ def myFattree():
     s44 = net.addSwitch('s44', cls=OVSKernelSwitch)
 
     info(' *** Add hosts\n')
-    ''''
-    一共16个主机
-    ''''
     h1 = net.addHost('h1', cls=Host, ip='10.0.0.2',defaultRoute=None)
     h2 = net.addHost('h2', cls=Host, ip='10.0.0.3',defaultRoute=None)
     h3 = net.addHost('h3', cls=Host, ip='10.0.1.2',defaultRoute=None)
@@ -87,9 +81,7 @@ def myFattree():
     net.addLink(s4,s24)
     net.addLink(s4,s34)
     net.addLink(s4,s44)
-    ''''
-    第二层之间的连接
-    ''''
+
     net.addLink(s11,s13)
     net.addLink(s11,s14)
     net.addLink(s12,s13)
@@ -106,9 +98,7 @@ def myFattree():
     net.addLink(s41,s44)
     net.addLink(s42,s43)
     net.addLink(s42,s44)
-    ''''
-    第二层和第三层之间的连接
-    ''''
+
     net.addLink(s11,h1)
     net.addLink(s11,h2)
     net.addLink(s12,h3)
