@@ -62,9 +62,7 @@ def myFattree():
     h16 = net.addHost('h16', cls=Host, ip='10.3.1.3',defaultRoute=None)
 
     info(' *** Add links\n')
-    ''''
-    第一层交换机与第二层的连接
-    ''''
+
     net.addLink(s1,s13)
     net.addLink(s1,s23)
     net.addLink(s1,s33)
